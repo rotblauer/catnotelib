@@ -101,46 +101,47 @@ func (fp NoteFingerprint) Value() []byte {
 }
 
 type NoteStructured struct {
-	Activity          string              `json:"activity"`
-	NumberOfSteps     int                 `json:"numberOfSteps"`
-	AverageActivePace float64             `json:"averageActivePace"`
-	CurrentPace       float64             `json:"currentPace"`
-	CurrentCadence    float64             `json:"currentCadence"`
-	Distance          float64             `json:"distance"`
-	CustomNote        string              `json:"customNote"` // FIXME: string or float64?
-	FloorsAscended    int                 `json:"floorsAscended"`
-	FloorsDescended   int                 `json:"floorsDescended"`
-	CurrentTripStart  time.Time           `json:"currentTripStart"`
-	Pressure          float64             `json:"pressure"`
-	Visit             VisitString         `json:"visit"`
-	HeartRateS        string              `json:"heartRateS"`
-	HeartRateRawS     string              `json:"heartRateRawS"`
-	BatteryStatus     BatteryStatusString `json:"batteryStatus"`
-	NetworkInfo       NetworkInfoString   `json:"networkInfo"`
-	ImgB64            string              `json:"imgb64"`
-	ImgS3             string              `json:"imgS3"`
-	Lightmeter        float64             `json:"lightmeter,omitempty"`
-	AmbientTemp       float64             `json:"ambient_temp,omitempty"`
-	Humidity          float64             `json:"humidity,omitempty"`
+	Activity           string              `json:"activity"`
+	ActivityConfidence int                 `json:"activityConfidence"`
+	NumberOfSteps      int                 `json:"numberOfSteps"`
+	AverageActivePace  float64             `json:"averageActivePace"`
+	CurrentPace        float64             `json:"currentPace"`
+	CurrentCadence     float64             `json:"currentCadence"`
+	Distance           float64             `json:"distance"`
+	CustomNote         string              `json:"customNote"` // FIXME: string or float64?
+	FloorsAscended     int                 `json:"floorsAscended"`
+	FloorsDescended    int                 `json:"floorsDescended"`
+	CurrentTripStart   time.Time           `json:"currentTripStart"`
+	Pressure           float64             `json:"pressure"`
+	Visit              VisitString         `json:"visit"`
+	HeartRateS         string              `json:"heartRateS"`
+	HeartRateRawS      string              `json:"heartRateRawS"`
+	BatteryStatus      BatteryStatusString `json:"batteryStatus"`
+	NetworkInfo        NetworkInfoString   `json:"networkInfo"`
+	ImgB64             string              `json:"imgb64"`
+	ImgS3              string              `json:"imgS3"`
+	Lightmeter         float64             `json:"lightmeter,omitempty"`
+	AmbientTemp        float64             `json:"ambient_temp,omitempty"`
+	Humidity           float64             `json:"humidity,omitempty"`
 	Accelerometer
 	UserAccelerometer
 	Gyroscope
 }
 
 type Accelerometer struct {
-	X *float64 `json:"accelerometer_x"`
-	Y *float64 `json:"accelerometer_y"`
-	Z *float64 `json:"accelerometer_z"`
+	X *float64 `json:"accelerometer_x,omitempty"`
+	Y *float64 `json:"accelerometer_y,omitempty"`
+	Z *float64 `json:"accelerometer_z,omitempty"`
 }
 type UserAccelerometer struct {
-	X *float64 `json:"user_accelerometer_x"`
-	Y *float64 `json:"user_accelerometer_y"`
-	Z *float64 `json:"user_accelerometer_z"`
+	X *float64 `json:"user_accelerometer_x,omitempty"`
+	Y *float64 `json:"user_accelerometer_y,omitempty"`
+	Z *float64 `json:"user_accelerometer_z,omitempty"`
 }
 type Gyroscope struct {
-	X *float64 `json:"gyroscope_x"`
-	Y *float64 `json:"gyroscope_y"`
-	Z *float64 `json:"gyroscope_z"`
+	X *float64 `json:"gyroscope_x,omitempty"`
+	Y *float64 `json:"gyroscope_y,omitempty"`
+	Z *float64 `json:"gyroscope_z,omitempty"`
 }
 
 type NetworkInfoString string
