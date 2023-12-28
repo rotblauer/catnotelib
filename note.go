@@ -111,14 +111,36 @@ type NoteStructured struct {
 	FloorsAscended    int                 `json:"floorsAscended"`
 	FloorsDescended   int                 `json:"floorsDescended"`
 	CurrentTripStart  time.Time           `json:"currentTripStart"`
-	Pressure      float64             `json:"pressure"`
-	Visit         VisitString         `json:"visit"`
-	HeartRateS    string              `json:"heartRateS"`
-	HeartRateRawS string              `json:"heartRateRawS"`
-	BatteryStatus BatteryStatusString `json:"batteryStatus"`
-	NetworkInfo   NetworkInfoString   `json:"networkInfo"`
-	ImgB64        string              `json:"imgb64"`
+	Pressure          float64             `json:"pressure"`
+	Visit             VisitString         `json:"visit"`
+	HeartRateS        string              `json:"heartRateS"`
+	HeartRateRawS     string              `json:"heartRateRawS"`
+	BatteryStatus     BatteryStatusString `json:"batteryStatus"`
+	NetworkInfo       NetworkInfoString   `json:"networkInfo"`
+	ImgB64            string              `json:"imgb64"`
 	ImgS3             string              `json:"imgS3"`
+	Lightmeter        float64             `json:"lightmeter,omitempty"`
+	AmbientTemp       float64             `json:"ambient_temp,omitempty"`
+	Humidity          float64             `json:"humidity,omitempty"`
+	Accelerometer
+	UserAccelerometer
+	Gyroscope
+}
+
+type Accelerometer struct {
+	X *float64 `json:"accelerometer_x"`
+	Y *float64 `json:"accelerometer_y"`
+	Z *float64 `json:"accelerometer_z"`
+}
+type UserAccelerometer struct {
+	X *float64 `json:"user_accelerometer_x"`
+	Y *float64 `json:"user_accelerometer_y"`
+	Z *float64 `json:"user_accelerometer_z"`
+}
+type Gyroscope struct {
+	X *float64 `json:"gyroscope_x"`
+	Y *float64 `json:"gyroscope_y"`
+	Z *float64 `json:"gyroscope_z"`
 }
 
 type NetworkInfoString string
