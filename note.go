@@ -102,7 +102,7 @@ func (fp NoteFingerprint) Value() []byte {
 
 type NoteStructured struct {
 	Activity           string              `json:"activity"`
-	ActivityConfidence int                 `json:"activityConfidence"`
+	ActivityConfidence *int                `json:"activity_confidence"`
 	NumberOfSteps      int                 `json:"numberOfSteps"`
 	AverageActivePace  float64             `json:"averageActivePace"`
 	CurrentPace        float64             `json:"currentPace"`
